@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">SoundCloud_13</string>
     <string name="offline">Your Library</string>
+    <string name="all_audio_title">All Audio</string>
+    <string name="alternative_rock_title">Alternative Rock</string>
+    <string name="ambient_title">Ambient</string>
+    <string name="classical_title">Classical</string>
+    <string name="country_title">Country</string>
+    <string name="your_library">Your Library</string>
+    <string name="online">Online</string>
 </resources>
