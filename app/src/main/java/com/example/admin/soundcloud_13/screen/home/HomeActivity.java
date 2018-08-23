@@ -15,7 +15,7 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         TabLayout tabLayout = findViewById(R.id.tab_layout_home);
-        final ViewPager viewPager = findViewById(R.id.view_pager_home);
+        ViewPager viewPager = findViewById(R.id.view_pager_home);
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
     }
