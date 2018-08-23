@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_view_offline"
+        android:id="@+id/text_view_title_genre"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingTop="@dimen/dp_15"
@@ -26,7 +26,7 @@
         android:layout_height="0dp"
         android:paddingStart="@dimen/dp_10"
         android:padding="@dimen/dp_5"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_offline"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_title_genre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_weight="16"
         android:paddingLeft="@dimen/dp_10" />
