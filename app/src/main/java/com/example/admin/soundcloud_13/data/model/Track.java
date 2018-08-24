@@ -26,6 +26,7 @@ public class Track {
     private String mUrn;
     private int mUserId;
     private User mUser;
+    private String mArtist;
 
     private Track(Builder builder) {
         this.mArtworkUrl = builder.mArtworkUrl;
@@ -51,6 +52,7 @@ public class Track {
         this.mUri = builder.mUri;;
         this.mUrn = builder.mUrn;
         this.mUserId = builder.mUserId;
+        this.mArtist = builder.mArtist;
     }
 
     public static class Builder {
@@ -77,6 +79,7 @@ public class Track {
         private String mUri;
         private String mUrn;
         private int mUserId;
+        private String mArtist;
 
         public Builder setArtworkUrl(String artworkUrl) {
             this.mArtworkUrl = artworkUrl;
@@ -190,6 +193,11 @@ public class Track {
 
         public Builder setUserId(int userId) {
             this.mUserId = userId;
+            return this;
+        }
+
+        public Builder setArtist(String artist) {
+            this.mArtist = artist;
             return this;
         }
 
@@ -396,5 +404,13 @@ public class Track {
 
     public void setUser(User user) {
         mUser = user;
+    }
+
+    public String getArtist() {
+        return mArtist;
+    }
+
+    public void setArtist(String artist) {
+        this.mArtist = artist;
     }
 }
