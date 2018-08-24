@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.example.admin.soundcloud_13.R;
 import com.example.admin.soundcloud_13.constant.GenreKey;
 import com.example.admin.soundcloud_13.screen.BaseFragment;
+import com.example.admin.soundcloud_13.screen.home.online.genre.GenreFragment;
 
 public class OnlineFragment extends BaseFragment implements OnlineContract.View {
     @Override
