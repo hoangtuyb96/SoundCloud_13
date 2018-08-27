@@ -1,5 +1,7 @@
 package com.example.admin.soundcloud_13.screen.home.online.genre;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,17 +19,21 @@ import com.example.admin.soundcloud_13.constant.Constants;
 import com.example.admin.soundcloud_13.constant.GenreKey;
 import com.example.admin.soundcloud_13.data.model.Track;
 import com.example.admin.soundcloud_13.screen.BaseFragment;
+import com.example.admin.soundcloud_13.screen.GenreListener;
+import com.example.admin.soundcloud_13.screen.play.PlayActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
 public class GenreFragment extends BaseFragment implements GenreContract.View {
     private String mGenre;
     private TextView mTitleGenreText;
     private GenreContract.Presenter mPresenter;
     private RecyclerView mRecyclerView;
     private TrackAdapter mTrackAdapter;
+    private GenreListener mGenreListener;
 
     public static Fragment newInstance(String genre) {
         GenreFragment genreFragment = new GenreFragment();
@@ -78,9 +84,23 @@ public class GenreFragment extends BaseFragment implements GenreContract.View {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void initRecyclerViewTrack() {
-        mTrackAdapter = new TrackAdapter(Objects.requireNonNull(getContext()));
+        mTrackAdapter = new TrackAdapter(Objects.requireNonNull(getContext()), mGenreListener);
         mRecyclerView.setAdapter(mTrackAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof GenreListener) {
+            mGenreListener = (GenreListener) context;
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mGenreListener = null;
     }
 }
