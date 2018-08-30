@@ -86,7 +86,7 @@ public class TrackAdapter extends BaseRecyclerViewAdapter<TrackAdapter.TrackView
         public void onClick(View v) {
             switch (v.getId()) {
                 default:
-                    mGenreListener.handlePlayTrack();
+                    mGenreListener.handlePlayTrack(mTracks, getAdapterPosition());
                     break;
             }
         }

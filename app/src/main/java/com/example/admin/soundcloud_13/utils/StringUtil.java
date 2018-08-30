@@ -9,4 +9,9 @@ public class StringUtil {
                 genre, Constants.CLIENT_ID, BuildConfig.API_KEY, Constants.LIMIT_DEFAULT, limit,
                 Constants.OFFSET_DEFAULT, offset);
     }
+
+    public static String formatTrackStreamURL(String uri) {
+        return String.format("%s/%s?%s=%s", uri, Constants.STREAM,
+                Constants.CLIENT_ID, BuildConfig.API_KEY);
+    }
 }

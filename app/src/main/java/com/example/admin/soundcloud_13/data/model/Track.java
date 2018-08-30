@@ -1,6 +1,8 @@
 package com.example.admin.soundcloud_13.data.model;
 
-public class Track {
+import java.io.Serializable;
+
+public class Track implements Serializable {
     private String mArtworkUrl;
     private int mCommentCount;
     private String mCreatedAt;

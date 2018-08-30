@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".screen.play.PlayActivity" />
+
+        <service android:name=".service.TrackService" />
     </application>
 
 </manifest>
